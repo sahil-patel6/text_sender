@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up/ Sign In</title>
+<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCc5GHicvki6KkLfBH5hfVavtCmrLxYqmo",
+        authDomain: "code-sender.firebaseapp.com",
+        databaseURL: "https://code-sender.firebaseio.com",
+        projectId: "code-sender",
+        storageBucket: "code-sender.appspot.com",
+        messagingSenderId: "1053474302225"
+    };
+    firebase.initializeApp(config);
+</script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.4.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.4.0/firebaseui.css" />
+    <script type="text/javascript">
+        // FirebaseUI config.
+        var uiConfig = {
+            signInSuccessUrl: 'index.html',
+            signInFlow: 'redirect',
+            signInOptions: [
+                // Leave the lines as is for the providers you want to offer your users.
+                firebase.auth.EmailAuthProvider.PROVIDER_ID
+            ],
+            callbacks: {
+                signInFailure: (error) =>console.log(error),
+            }
+            // tosUrl and privacyPolicyUrl accept either url string or a callback
+            // function.
+            // Terms of service url/callback.
+            // Privacy policy url/callback.
+        };
+
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        // The start method will wait until the DOM is loaded.
+        ui.start('#firebaseui-auth-container', uiConfig);
+
+    </script>
+</head>
+
+<body>
+    <!-- The surrounding HTML is left untouched by FirebaseUI.
+         Your app may use that space for branding, controls and other customizations.-->
+    <h1>Please Sign Up/ Sign</h1>
+    <div id="firebaseui-auth-container"></div>
+</body>
+
+</html>

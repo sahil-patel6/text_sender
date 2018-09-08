@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Text Sender</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <div class="header">
+
+    <h1>Text Sender</h1>
+
+  </div>
+
+  <div class="send_text">
+
+    <textarea id="sendTextP" type="text">
+
+        Something to  send
+
+    </textarea>
+
+  </div>
+
+  <input type="submit" value="Send Text" id="sendButton" />
+
+  <div class="get_text">
+
+    <textarea id="getTextP" type="text">
+    Something To Get
+    </textarea>
+
+  </div>
+
+  <div id="getDiv">
+    <input type="submit" value="Get Text" id="getButton" />
+  </div>
+
+<div id="signDiv">
+  <input type="submit" id="signIn" />
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+
+
+  <script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+
+  </script>
+
+</body>
+
+</html>
