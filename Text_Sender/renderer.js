@@ -56,16 +56,6 @@ console.log(clipboardContent);
 
         });
 
-        getButton.addEventListener('click',()=>{
-
-          firebase.database().ref('/users/' + userId).once('value').then(function (snapshot) {
-            getTexTP.value = snapshot.val();
-            // ...
-          });
-
-
-        });
-
 
 var data = firebase.database().ref('users/' + user.uid);
 data.on('value', function (snapshot) {
