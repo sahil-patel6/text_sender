@@ -38,7 +38,7 @@ function createWindow() {
 app.on('ready', createWindow)
 
  app.on('browser-window-created',function(w,window){
-   window.setMenu(null);
+   //window.setMenu(null);
  });
 
 // Quit when all windows are closed.
